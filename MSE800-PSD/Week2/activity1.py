@@ -24,7 +24,7 @@ def calc_complex():
     x = 1 + 2j
     y = 3 + 4j
     z = x + y
-    return '{x} + {y} = {z}, real', z.real, 'imag = ', z.imag
+    return f'{x} + {y} = {z}, real = {z.real}, imag = {z.imag}'
 
 print('add', add(10, 5))
 print('subtract', subtract(10, 5))
