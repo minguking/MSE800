@@ -4,9 +4,11 @@ from typing import List
 
 @dataclass
 class Student:
-    name: str
-    age: int
-    student_id: str
+    
+    def __init__(self, name, age, student_id):
+        self.name = name
+        self.age = age
+        self.student_id = student_id
 
 def collect_students(count: int = 3) -> List[Student]:
     students: List[Student] = []
