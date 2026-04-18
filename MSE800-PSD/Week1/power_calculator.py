@@ -1,7 +1,11 @@
+
 """
 MSE800-PSD | Week 1 - Activity 3
 Power Calculator: calculate x to the power of y
 """
+
+import numpy as np
+
 
 def power(x, y):
     """
@@ -14,7 +18,8 @@ def power(x, y):
     Returns:
         float: Result of x ** y
     """
-    return x ** y
+    # return x ** y
+    return np.power(x, y)
 
 
 def main():

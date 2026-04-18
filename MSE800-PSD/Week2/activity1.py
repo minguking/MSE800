@@ -41,3 +41,5 @@ print('divide', divide(10, 4))
 print('modulo', modulo(11, 3))
 print('calc_complex', calc_complex())
 print('factorial', factorial(5))
+
+print(round(45.5))
