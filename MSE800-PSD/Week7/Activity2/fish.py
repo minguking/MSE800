@@ -54,3 +54,23 @@ class Salmon(Fish):
     @property
     def category(self) -> str:
         return "Edible"
+
+## Factory Pattern ##
+class FishFactory:
+    _fish_map = {
+        "goldfish":  GoldFish,
+        "shark":     Shark,
+        "angelfish": Angelfish,
+        "tuna":      Tuna,
+        "salmon":    Salmon,
+    }
+
+    @staticmethod
+    def create(fish_type: str) -> Fish:
+        key = fish_type.strip().lower()
+        cls = FishFactory._fish_map.get(key)
+        if cls is None:
+            available = ", ".join(FishFactory._fish_map.keys())
+            raise ValueError(f"Unknown fish type: {fish_type}. Available: {available}")
+        return cls(fish_type)
+

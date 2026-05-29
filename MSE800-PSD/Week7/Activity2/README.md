@@ -4,46 +4,46 @@ This project manages an aquarium in Auckland with different fish types: Goldfish
 
 ## Project structure
 
-- `aquarium.py` - main application file with the aquarium menu, factory, and singleton implementation.
-- `fish.py` - fish classes and the base `Fish` abstract class.
+- `main.py` - program entry point and user menu.
+- `aquarium.py` - `Aquarium` singleton class for managing the aquarium inventory.
+- `fish.py` - fish classes and the `FishFactory` factory implementation.
 - `README.md` - project description and usage instructions.
 
 ## Classes and responsibilities
 
 - `Fish` (abstract base class)
   - Common parent for all fish types.
-  - Requires each fish to implement a `category` property.
+  - Requires each fish type to implement a `category` property.
 
 - `GoldFish`, `Shark`, `Angelfish`, `Tuna`, `Salmon`
   - Specific fish subclasses in `fish.py`.
-  - Each class sets its own `category` value:
+  - Each class defines its own `category`:
     - `GoldFish` and `Angelfish` are `Beautiful` fish.
     - `Shark` is `Dangerous`.
     - `Tuna` and `Salmon` are `Edible`.
 
 - `FishFactory`
-  - Factory pattern implementation in `aquarium.py`.
-  - Creates fish objects from a string type.
+  - Factory pattern implementation in `fish.py`.
+  - Creates the correct fish object based on a string type.
 
 - `Aquarium`
   - Singleton pattern implementation in `aquarium.py`.
-  - Stores all fish in a single aquarium inventory.
-  - Provides methods to add fish, display inventory, and summarize fish.
+  - Keeps a single aquarium instance for all fish data.
+  - Adds fish and shows inventory summaries.
 
 ## Description
 
-- Uses design patterns to create and manage fish objects.
-- Displays fish categories and counts in the aquarium.
-- Supports adding multiple fish in one request.
-- Shows a summary like "We have 60 Salmons, Salmon is an edible fish."
+- Uses Factory and Singleton design patterns.
+- Adds fish to the aquarium and keeps a single shared inventory.
+- Displays category counts and fish summaries by type.
+- Avoids repeated listing by summarizing fish like "We have 60 Salmons, Salmon is an edible fish."
 
 ## How to run
 
 ```bash
-python aquarium.py
+python main.py
 ```
 
 ## Notes
 
-- A README file is mandatory and must be included in your GitHub repository for this activity.
-- The project combines both Factory and Singleton patterns to manage fish creation and aquarium state.
+- `main.py` is the program entry point, while `aquarium.py` and `fish.py` contain the core logic.
