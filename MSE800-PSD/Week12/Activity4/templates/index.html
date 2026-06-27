@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+<body style="background-color: white; font-family: Georgia, 'Times New Roman', serif; color: #2f2a24;">
+    <h1 style="color: #7a3e00;">BMI Calculator</h1>
+    <form action="/bmi/" method="get" onsubmit="return validate()">
+        <label for="Height in cm:">Height (cm):</label>
+        <input type="float" id="height" name="height">
+        <br><br>
+        <label for="Weight in kilograms:">Weight (kg):</label>
+        <input type="float" id="weight" name="weight">
+        <br><br>
+        <input type="submit" value="Calculate BMI">
+        <br><br>
+    </form>
+    
+    <script>
+        function validate() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value);
+            if (!weight || !height || weight <= 0 || height <= 0) {
+                alert('Please enter valid weight and height (must be greater than 0).');
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
